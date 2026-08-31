@@ -1,20 +1,20 @@
 class PhantomClient < Formula
   desc "Phantom Chat desktop client"
   homepage "https://github.com/gothLinus/phantom-chat"
-  version "0.1.1"
+  version "0.1.2"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/gothLinus/phantom-chat/releases/download/phantom-client-0.1.1/phantom-client-aarch64-apple-darwin.tar.xz"
-      sha256 "d60ac6c3723175fd69c61741c009294e2095b700a1296f25572153762c7cd010"
+      url "https://github.com/gothLinus/phantom-chat-releases/releases/download/phantom-client-0.1.2/phantom-client-aarch64-apple-darwin.tar.xz"
+      sha256 "3e8398ac0990ceae8b0ec2e52d820173df59051571bc89b73abbf1e3d85a36c7"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gothLinus/phantom-chat/releases/download/phantom-client-0.1.1/phantom-client-x86_64-apple-darwin.tar.xz"
-      sha256 "337ba587313068f99639b9508f13b61de31715758f6fe91213add1b1c149cd1b"
+      url "https://github.com/gothLinus/phantom-chat-releases/releases/download/phantom-client-0.1.2/phantom-client-x86_64-apple-darwin.tar.xz"
+      sha256 "ce08e12200bfc7b9da89af946ec2d09d834cbd9ddf3e47ef9cd8f13d3ef56be7"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/gothLinus/phantom-chat/releases/download/phantom-client-0.1.1/phantom-client-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "4a5bc35699912b6f61978a33089483a965082034dc72e0e4f808f50a9ab3377c"
+    url "https://github.com/gothLinus/phantom-chat-releases/releases/download/phantom-client-0.1.2/phantom-client-x86_64-unknown-linux-gnu.tar.xz"
+    sha256 "e05daf122a25e4aaccab21425a378148f0513467dea32de4875f3bdc293809ab"
   end
 
   BINARY_ALIASES = {
