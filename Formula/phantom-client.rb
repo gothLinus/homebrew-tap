@@ -1,26 +1,14 @@
 class PhantomClient < Formula
   desc "Phantom Chat desktop client"
   homepage "https://github.com/gothLinus/phantom-chat"
-  version "0.1.2"
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/gothLinus/phantom-chat-releases/releases/download/phantom-client-0.1.2/phantom-client-aarch64-apple-darwin.tar.xz"
-      sha256 "3e8398ac0990ceae8b0ec2e52d820173df59051571bc89b73abbf1e3d85a36c7"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/gothLinus/phantom-chat-releases/releases/download/phantom-client-0.1.2/phantom-client-x86_64-apple-darwin.tar.xz"
-      sha256 "ce08e12200bfc7b9da89af946ec2d09d834cbd9ddf3e47ef9cd8f13d3ef56be7"
-    end
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/gothLinus/phantom-chat-releases/releases/download/phantom-client-0.1.2/phantom-client-x86_64-unknown-linux-gnu.tar.xz"
-    sha256 "e05daf122a25e4aaccab21425a378148f0513467dea32de4875f3bdc293809ab"
+  version "0.2.9"
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/gothLinus/phantom-chat-releases/releases/download/v0.2.9/phantom-client-aarch64-apple-darwin.tar.xz"
+    sha256 "a4aafe9bc7b71b81c926f5d5f80bf25c008917088f4d1674fa2e0ef4954d942a"
   end
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin": {},
   }.freeze
 
   def target_triple
@@ -40,12 +28,6 @@ class PhantomClient < Formula
 
   def install
     if OS.mac? && Hardware::CPU.arm?
-      bin.install "phantom-client"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "phantom-client"
-    end
-    if OS.linux? && Hardware::CPU.intel?
       bin.install "phantom-client"
     end
 
